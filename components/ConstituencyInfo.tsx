@@ -54,11 +54,26 @@ export default function ConstituencyInfo() {
               <h3 className="font-bold text-xl">{nalitabariInfo.name}</h3>
             </div>
             <p className="text-gray-600 mb-4">{nalitabariInfo.description}</p>
-            <div className="mb-4">
-              <p className="text-sm text-gray-700">
-                Working together with Nakla to serve the people of Sherpur-2 constituency
-                and ensure comprehensive development across both upazilas.
-              </p>
+            <div className="space-y-2 mb-4">
+              <div className="flex items-center space-x-2 text-sm">
+                <FiFlag className="text-accent-600" />
+                <span className="text-gray-700">
+                  <strong>Unions:</strong> {nalitabariInfo.totalUnions} | <strong>Polling Centers:</strong> {nalitabariInfo.totalPollingCenters}
+                </span>
+              </div>
+              {nalitabariInfo.totalVoters > 0 && (
+                <div className="flex items-center space-x-2 text-sm">
+                  <FiUsers className="text-accent-600" />
+                  <span className="text-gray-700">
+                    <strong>Total Voters:</strong> {nalitabariInfo.totalVoters.toLocaleString()}
+                  </span>
+                </div>
+              )}
+              {nalitabariInfo.electionArea && (
+                <div className="text-xs text-gray-600 mt-2">
+                  <strong>Election Area:</strong> {nalitabariInfo.electionArea}
+                </div>
+              )}
             </div>
             <a
               href={nalitabariInfo.officialWebsite}

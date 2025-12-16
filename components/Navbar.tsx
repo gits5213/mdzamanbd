@@ -12,6 +12,7 @@ export default function Navbar() {
     { href: "/about", label: "About" },
     { href: "/vision", label: "Vision" },
     { href: "/constituency", label: "Constituency" },
+    { href: "/unions", label: "Unions & Schools" },
     { href: "/contact", label: "Contact" },
   ];
 
